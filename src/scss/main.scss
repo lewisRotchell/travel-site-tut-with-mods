@@ -1,4 +1,3 @@
-$red: red;
-
-body {
-}
+@import "normalize.css";
+@import "./core//base";
+@import "./sections/hero";
