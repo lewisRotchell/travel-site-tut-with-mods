@@ -6,10 +6,11 @@
   &__b-margin-until-medium {
     margin-bottom: 1rem;
   }
-  @include atMedium {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
 
+  &__b-margin-until-large {
+    margin-bottom: 1rem;
+  }
+  @include atMedium {
     &--gutters {
       column-gap: 5.3%;
     }
@@ -69,6 +70,27 @@
 
     &__large-8 {
       grid-column: span 8;
+    }
+  }
+
+  // Begin equal height rules
+  &--equal-height-at-medium {
+    @include atMedium {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
+    }
+  }
+
+  &--equal-height-at-large {
+    @include atLarge {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
     }
   }
 }
