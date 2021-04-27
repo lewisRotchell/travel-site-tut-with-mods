@@ -10,7 +10,12 @@
   }
 
   @include atMedium {
+    position: fixed;
     background-color: rgba(47, 85, 114, 0.3);
+
+    &--dark {
+      background-color: rgba(23, 51, 72, 0.85);
+    }
   }
 
   &__btn-container {
@@ -22,15 +27,22 @@
   &__logo {
     position: absolute;
     background-color: $main-blue;
-    padding: 13px 29px;
+    padding: 25px 36px;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.8);
+    transform-origin: 50% 0;
+    transition: transform 0.3s ease-out;
 
     @include atMedium {
       left: auto;
       transform: translateX(0);
-      padding: 25px 36px;
+
+      //Only select logo when dark is being used
+      .site-header--dark & {
+        transform: scale(0.55);
+        transform-origin: 50% 0;
+      }
     }
   }
 
@@ -90,6 +102,7 @@
 
     .site-header__menu-icon__middle {
       opacity: 0;
+      visibility: hidden;
       transform: scaleX(0);
     }
 
@@ -100,6 +113,7 @@
 
   &__menu-content {
     opacity: 0;
+    visibility: hidden;
     transform: scale(1.2);
     transition: all 0.3s ease-out;
     position: relative;
@@ -110,6 +124,7 @@
     @include atMedium {
       display: flex;
       justify-content: flex-end;
+      visibility: visible;
       opacity: 1;
       z-index: 1;
       padding-top: 0;
@@ -117,6 +132,7 @@
     }
 
     &--is-visible {
+      visibility: visible;
       opacity: 1;
       z-index: 1;
       transform: scale(1);
