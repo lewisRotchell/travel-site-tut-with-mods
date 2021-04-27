@@ -11,6 +11,8 @@
     margin-bottom: 1rem;
   }
   @include atMedium {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     &--gutters {
       column-gap: 5.3%;
     }
@@ -86,11 +88,9 @@
 
   &--equal-height-at-large {
     @include atLarge {
-      display: flex;
-    }
-
-    & > div {
-      display: flex;
+      & > div {
+        display: flex;
+      }
     }
   }
 }
