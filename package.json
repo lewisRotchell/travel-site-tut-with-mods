@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "assets": "^3.0.1",
+    "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1"
   }
